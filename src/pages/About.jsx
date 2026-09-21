@@ -1,5 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import Footer from '../components/Footer'
 
 
 const About = () => {
@@ -49,7 +50,7 @@ const About = () => {
       </div>
 
 
-
+    <Footer/>
     </div>
   )
 }

@@ -28,6 +28,7 @@ import p_img24 from './p_img24.png'
 import background from './background.mp4'
 
 
+
 import logo from './logo.png'
 import cart_icon from './cart_icon.png'
 import bin_icon from './bin_icon.png'
@@ -44,6 +45,9 @@ import about_img from './about_img.png'
 import contact_img from './contact_img.png'
 import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
+import tiktok from "./tiktok.png"
+import fb from "./fb.png"
+import insta from "./insta.png"
 
 export const assets = {
     logo,
@@ -62,7 +66,10 @@ export const assets = {
     contact_img,
     stripe_logo,
     cross_icon,
-    background
+    background,
+    tiktok,
+    insta,
+    fb
 }
 
 export const products = [
