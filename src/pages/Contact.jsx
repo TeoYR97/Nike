@@ -22,7 +22,7 @@ const Contact = () => {
           <p className=' text-gray-500'> Email: Nike@gmail.com</p>
           </div>
       </div>
-      <Footer/>
+      
 
     </div>
   )

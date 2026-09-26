@@ -48,6 +48,7 @@ import cross_icon from './cross_icon.png'
 import tiktok from "./tiktok.png"
 import fb from "./fb.png"
 import insta from "./insta.png"
+import paypal from "./paypal.png"
 
 export const assets = {
     logo,
@@ -69,7 +70,8 @@ export const assets = {
     background,
     tiktok,
     insta,
-    fb
+    fb,
+    paypal
 }
 
 export const products = [
