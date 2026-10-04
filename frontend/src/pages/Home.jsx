@@ -12,7 +12,7 @@ const Home = () => {
       <Background/>
       <LatestCollection/>
       <BestSeller/>
-      <Footer/>
+      
     </div>
   )
 }
