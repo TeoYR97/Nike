@@ -83,21 +83,7 @@ const Men = () => {
         <p onClick={() => setShowFilter(!showFilter)} className="my-2 text-xl flex items-center cursor-pointer gap-2 pt-7">Filter
           <img src={assets.dropdown_icon} className={`h-3 sm:hidden ${showFilter ? 'rotate-90' : ''}`} />
         </p>
-        {/*Category filter*/}
-        {/* <div className={`border-gray-300 border pl-5 py-2 mt-4 ${showFilter ? '' : 'hidden'} sm:block`}>
-          <p className="mb-3 text-sm font-medium">Categories</p>
-          <div className="flex flex-col gap-2 text-sm font-light text-gray-600">
-            <p className="flex gap-2">
-              <input onChange={toggleCategory} className="w-3 " type="checkbox" value={"Men"} />Men
-            </p>
-            <p className="flex gap-2">
-              <input onChange={toggleCategory} className="w-3 " type="checkbox" value={"Women"} />Women
-            </p>
-            <p className="flex gap-2">
-              <input onChange={toggleCategory} className="w-3 " type="checkbox" value={"Kids"} />Kids
-            </p>
-          </div>
-        </div> */}
+       
 
         {/*Subcategory filter*/}
         <div className={`border-gray-300 border pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'} sm:block`}>

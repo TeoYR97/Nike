@@ -7,8 +7,8 @@ import axios from "axios"
 
 const PlaceOrder = () => {
 
-    const [method, setMethod] = useState('paypal');
-    const { navigate, cartItems, setCartItems, getCartAmount, delivery_fee, products } = useContext(ShopContext);
+    const [method, setMethod] = useState('cod');
+    const { navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, delivery_fee, products } = useContext(ShopContext);
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -54,16 +54,16 @@ const PlaceOrder = () => {
 
             switch (method) {
             
-                            // API Calls for COD
-                            // case 'cod':
-                            //     const response = await axios.post(backendUrl + '/api/order/place',orderData,{headers:{token}})
-                            //     if (response.data.success) {
-                            //         setCartItems({})
-                            //         navigate('/orders')
-                            //     } else {
-                            //         toast.error(response.data.message)
-                            //     }
-                            //     break;
+                            //API Calls for COD
+                            case 'cod':
+                                const response = await axios.post(backendUrl + '/api/order/place',orderData,{headers:{token}})
+                                if (response.data.success) {
+                                    setCartItems({})
+                                    navigate('/orders')
+                                } else {
+                                    toast.error(response.data.message)
+                                }
+                                break;
             
                             case 'stripe':
                                 const responseStripe = await axios.post(backendUrl + '/api/order/stripe',orderData,{headers:{token}})
@@ -75,14 +75,7 @@ const PlaceOrder = () => {
                                 }
                                 break;
             
-                            // case 'razorpay':
-            
-                            //     const responseRazorpay = await axios.post(backendUrl + '/api/order/razorpay', orderData, {headers:{token}})
-                            //     if (responseRazorpay.data.success) {
-                            //         initPay(responseRazorpay.data.order)
-                            //     }
-            
-                            //     break;
+                            
             
                             default:
                                 break;
@@ -138,8 +131,8 @@ const PlaceOrder = () => {
                             <img className='h-5 mx-4' src={assets.stripe_logo} alt="" />
                         </div>
 
-                        <div onClick={() => setMethod('paypal')} className='flex items-center gap-3 border p-2 px-8 cursor-pointer'>
-                            <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'paypal' ? 'bg-green-400' : ''}`}></p>
+                        <div onClick={() => setMethod('cod')} className='flex items-center gap-3 border p-2 px-8 cursor-pointer'>
+                            <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'cod' ? 'bg-green-400' : ''}`}></p>
                             <img className='h-5 mx-4' src={assets.paypal} alt="" />
                         </div>
                     </div>
