@@ -1,5 +1,5 @@
 import express from 'express'
-import {placeOrder, placeOrderStripe, allOrders, userOrders, updateStatus, verifyStripe} from '../controllers/orderController.js'
+import {placeOrder, placeOrderStripe, allOrders, userOrders, updateStatus, verifyStripe, createPayPalOrder, capturePayPalOrder} from '../controllers/orderController.js'
 import adminAuth  from '../middleware/adminAuth.js'
 import authUser from '../middleware/auth.js'
 
@@ -19,6 +19,10 @@ orderRouter.post('/userorders',authUser,userOrders)
 
 // verify payment
 orderRouter.post('/verifyStripe',authUser, verifyStripe)
+
+//Paypal
+orderRouter.post('/paypal/create', authUser, createPayPalOrder)
+orderRouter.post('/paypal/capture', authUser, capturePayPalOrder)
 
 
 export default orderRouter
